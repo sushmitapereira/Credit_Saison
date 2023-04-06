@@ -54,6 +54,12 @@ Widget build(BuildContext context) {
 	return Scaffold(
     backgroundColor: kBackgroundDarkColor,
 	appBar: AppBar(
+  leading: Icon(Icons.menu,
+          size: 20,
+          color: kIconColor,),
+          actions: [
+           // Icon(Icon.)
+          ],
   backgroundColor: Colors.transparent,
    elevation: 0,
 		title: Text(title),
@@ -61,6 +67,8 @@ Widget build(BuildContext context) {
 	// Sets the content to the
 	// center of the application page
 	body:Container(
+    
+    padding: const EdgeInsets.only( top: 0, left: 10, right: 10),
     decoration: BoxDecoration(
       gradient: LinearGradient(colors: 
       [
@@ -73,6 +81,18 @@ Widget build(BuildContext context) {
       end: Alignment.bottomCenter,
       )
     ),
+  child: Column(
+    children: [
+      Row(
+        children: [
+          //Icon(Icons.menu,
+          //size: 20,
+         // color: kIconColor,)
+
+        ],
+      )
+    ],
+  ),
   )
 	);
 }
