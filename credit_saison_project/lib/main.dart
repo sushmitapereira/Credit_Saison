@@ -1,6 +1,7 @@
 // Importing important packages require to connect
 // Flutter and Dart
 import 'package:flutter/material.dart';
+import 'package:credit_saison_project/constants.dart';
 
 // Main Function
 void main() {
@@ -32,10 +33,11 @@ Widget build(BuildContext context) {
 	title: 'Hello World Demo Application',
 	// theme of the widget
 	theme: ThemeData(
-		primarySwatch: Colors.lightGreen,
+    
+	//	primarySwatch: Colors.lightGreen,
 	),
 	// Inner UI of the application
-	home: const MyHomePage(title: 'Home page'),
+	home: const MyHomePage(title: ''),
 	);
 }
 }
@@ -50,18 +52,28 @@ final String title;
 Widget build(BuildContext context) {
   
 	return Scaffold(
-    backgroundColor: kDefaultIconDarkColor,
+    backgroundColor: kBackgroundDarkColor,
 	appBar: AppBar(
-    backgroundColor: Colors.transparent,
+  backgroundColor: Colors.transparent,
+   elevation: 0,
 		title: Text(title),
 	),
 	// Sets the content to the
 	// center of the application page
-	body: const Center(
-		// Sets the content of the Application
-		child: Text(
-		'Welcome to GeeksForGeeks!',
-	)),
+	body:Container(
+    decoration: BoxDecoration(
+      gradient: LinearGradient(colors: 
+      [
+        kBackgroundDarkColor,
+        kBackgroundMidColor,
+        kBackgroundLightColor,
+      ],
+      stops: [0.01,0.08,1,],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      )
+    ),
+  )
 	);
 }
 }
