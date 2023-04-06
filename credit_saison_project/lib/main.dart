@@ -68,7 +68,7 @@ Widget build(BuildContext context) {
         kBackgroundMidColor,
         kBackgroundLightColor,
       ],
-      stops: [0.01,0.07,1,],
+      stops: [0.01,0.08,1,],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       )
