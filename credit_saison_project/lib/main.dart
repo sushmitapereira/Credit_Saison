@@ -1,5 +1,4 @@
 // main.dart
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:credit_saison_project/constants.dart';
@@ -61,9 +60,11 @@ class HomePage extends StatelessWidget {
            leading: IconButton(onPressed: (){
 
            }, icon: Icon(MyFlutterApp.menu)),
-           actions: [IconButton(onPressed: (){
-
-           }, icon:Icon(MyFlutterApp.notify))],
+           actions: [
+            
+            Image.asset('assets/notification.PNG',width: 25,height: 25,),
+            
+           ],
           ),
           body:SingleChildScrollView(
               
@@ -86,8 +87,8 @@ class HomePage extends StatelessWidget {
                   child: Center(
                      
                         child:Row(children: <Widget>[
-                          
-                          Icon(MyFlutterApp.offer,color: Colors.white,),
+                           Image.asset('assets/offer.PNG',width: 25,height: 25,),
+                          //Icon(MyFlutterApp.offer,color: Colors.white,),
                           Text('  0% Processing Fee',style: TextStyle(fontSize: 15,color: Colors.white),)
                         ],),
                         
