@@ -1,4 +1,6 @@
 // main.dart
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:credit_saison_project/constants.dart';
 import 'package:credit_saison_project/my_flutter_app_icons.dart';
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       // Remove the debug banner
       debugShowCheckedModeBanner: false,
-      title: 'Kindacode.com',
+     
       home: HomePage(),
     );
   }
@@ -40,12 +42,14 @@ class HomePage extends StatelessWidget {
   ];
     return Container(
       decoration: const BoxDecoration(
+        backgroundBlendMode: BlendMode.color,
           gradient: LinearGradient(
              
               colors: [kBackgroundDarkColor,kBackgroundMidColor, kBackgroundLightColor],
                 stops: [0.01,0.08,1,],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
+      
       )),
       child: Scaffold(
           // By defaut, Scaffold background is white
@@ -94,6 +98,7 @@ class HomePage extends StatelessWidget {
                     ),
                     
                   ),
+                   SizedBox(height: 70),
                  Center(
                     
                     child: PieChart(dataMap: dataMap,
@@ -106,8 +111,112 @@ class HomePage extends StatelessWidget {
                     ),
                         
                   ),
+                   SizedBox(height: 70),
+                 DecoratedBox(
+    decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+             kWithdrawDarkColor,
+             kWithdrawLightColor
+              //add more colors
+            ]),
+          borderRadius: BorderRadius.circular(30),
+         
+      ),
+    child:ElevatedButton(
+      style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          disabledBackgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          //make color or elevated button transparent
+      ),
+      
+      onPressed: (){
+        
+      }, 
+      child: Padding(
+        padding:EdgeInsets.only(
+          top: 18,
+          bottom: 18,
+          left: 20,
+          right: 20,
+        ),
+        child:Text("Withdraw More",style:TextStyle(fontSize: 20),),
+      )
+    )  
+),
+
+SizedBox(height: 50),
+Center(
+  child: Text('All Withdrawals:',style: TextStyle(color: Colors.white),),
+),
+Row(  
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,  
+          children:<Widget>[  
+            Container(  
+              margin: EdgeInsets.all(15.0),  
+              padding: EdgeInsets.all(15.0),  
+              decoration:BoxDecoration(  
+                  borderRadius:BorderRadius.circular(8),  
+                  color:kOngoingLightColor
+              ),  
+              child: Text("Ongoing",style: TextStyle(color:kOngoingGreyTextColor,fontSize:15),),  
+            ),  
+            Container(  
+              margin: EdgeInsets.all(15.0),  
+              padding: EdgeInsets.all(15.0),  
+              decoration:BoxDecoration(  
+                  
+                  borderRadius:BorderRadius.circular(8),  
+                  color: kPastLightColor,
+              ),  
+              child: Text("Past",style: TextStyle(color:kOngoingGreyTextColor,fontSize:15),),  
+            ),  
+           
+          ]  
+      ),  
+      SizedBox(height: 50),
+Center(
+  child: Text('Downloads documents:',style: TextStyle(color: Colors.white),),
+),
+Row(  
+         
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,  
+          children:<Widget>[  
+            Container(  
+             child: ElevatedButton.icon(
+  onPressed: () {},
+  icon: Icon( // <-- Icon
+    MyFlutterApp.download,
+    size: 24.0,
+  ),
+  label: Text('Sanction Letter'), // <-- Text
+),
+            ),  
+            Container(  
+             
+             child: ElevatedButton.icon(
+              
+  onPressed: () {},
+  icon: Icon( // <-- Icon
+    MyFlutterApp.download,
+    size: 24.0,
+  ),
+  
+  label: Text('Agreement Letter'), // <-- Text
+),
+            ),  
+           
+          ]  
+      ),  
+                   
+
               ],
+              
               ),
+          
             ),
              
           ),
