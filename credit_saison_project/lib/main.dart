@@ -146,21 +146,26 @@ class HomePage extends StatelessWidget {
                     ),
                     Container(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
                             'Total limit',
                             style: TextStyle(color: Colors.white),
+                              textAlign: TextAlign.start,
                           ),
                           Text(
                             '₹ 2,00,000',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.start,
                           ),
                           SizedBox(height: 50),
                           Text(
                             'Utilised limit',
                             style: TextStyle(color: Colors.white),
+                            textAlign: TextAlign.start,
                           ),
                           Text(
                             '₹ 50,000',
